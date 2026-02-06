@@ -1,0 +1,43 @@
+:root {
+    /* Brand Colors - Elite Theme */
+    --primary: #52307c;
+    /* Deep Royal Purple */
+    --primary-dark: #3a1e5a;
+    --accent: #f39200;
+    /* Gold/Amber */
+    --accent-glow: rgba(243, 146, 0, 0.4);
+
+    /* Neomorphic / Glassmorphism Colors */
+    --bg-ivory: #ffffff;
+    --bg-soft: #f8fafc;
+    --glass-white: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.6);
+
+    /* Typography & Text */
+    --text-dark: #1e293b;
+    --text-gray: #64748b;
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+
+    /* Utility */
+    --border: #e2e8f0;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+    --radius-lg: 20px;
+
+    /* Onyx Tokens for Brand Bridging */
+    --onyx-bg: #0f172a;
+    --onyx-surface: #1e293b;
+    --onyx-border: rgba(255, 255, 255, 0.1);
+    --onyx-text: #f1f5f9;
+    --onyx-glass: rgba(15, 23, 42, 0.95);
+
+    /* Shared Utilities */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --info: #3b82f6;
+
+    /* Derived Primary Colors (Purple Based) */
+    --primary-glow: rgba(82, 48, 124, 0.3);
+    --primary-soft: rgba(82, 48, 124, 0.08);
+}

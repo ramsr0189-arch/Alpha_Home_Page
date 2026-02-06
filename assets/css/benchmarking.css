@@ -1,0 +1,709 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   ALPHA PROFIN - PERFORMANCE BENCHMARKING STYLES v1.0
+   AI-powered performance analytics UI
+   Phase 2A - Feature 4
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Benchmarking Wrapper */
+.benchmarking-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 16px;
+    min-height: 600px;
+}
+
+/* Header */
+.benchmark-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+}
+
+.benchmark-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.benchmark-title i {
+    color: #3b82f6;
+    font-size: 28px;
+}
+
+.benchmark-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin: 4px 0 0 40px;
+}
+
+.benchmark-timeframe {
+    display: flex;
+    gap: 8px;
+    background: #f1f5f9;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.timeframe-btn {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.timeframe-btn:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.timeframe-btn.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Overview Cards */
+.benchmark-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.overview-card {
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.overview-card i {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.overview-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.overview-label {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* Rank Card */
+.rank-card {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 16px;
+}
+
+.rank-icon {
+    font-size: 48px;
+    line-height: 1;
+}
+
+.rank-info {
+    flex: 1;
+}
+
+.rank-label {
+    font-size: 11px;
+    opacity: 0.9;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rank-value {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 4px 0;
+}
+
+.rank-percentile {
+    font-size: 12px;
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+/* Sections */
+.metrics-section,
+.skill-gaps-section,
+.goals-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: #3b82f6;
+    font-size: 20px;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.metric-card {
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.metric-card:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+.metric-card.above {
+    border-left: 3px solid #10b981;
+}
+
+.metric-card.below {
+    border-left: 3px solid #f59e0b;
+}
+
+.metric-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.metric-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.metric-info {
+    flex: 1;
+}
+
+.metric-label {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.metric-value {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.metric-comparison {
+    margin-bottom: 12px;
+}
+
+.comparison-bar {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.bar-segment {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.comparison-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.label-you {
+    color: #111827;
+}
+
+.label-industry {
+    color: #64748b;
+}
+
+.label-top {
+    color: #94a3b8;
+}
+
+.metric-percentile {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.metric-percentile i {
+    font-size: 10px;
+}
+
+.metric-card.above .metric-percentile {
+    color: #10b981;
+}
+
+.metric-card.below .metric-percentile {
+    color: #f59e0b;
+}
+
+/* Skill Gaps */
+.gaps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.gap-card {
+    padding: 16px;
+    background: #fef3c7;
+    border-radius: 10px;
+    border: 1px solid #fbbf24;
+}
+
+.gap-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.gap-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.gap-info {
+    flex: 1;
+}
+
+.gap-metric {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+.gap-percentage {
+    font-size: 12px;
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.gap-recommendation {
+    font-size: 12px;
+    color: #78350f;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+}
+
+.gap-recommendation i {
+    color: #f59e0b;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.no-gaps {
+    text-align: center;
+    padding: 40px;
+    color: #10b981;
+}
+
+.no-gaps i {
+    font-size: 48px;
+    margin-bottom: 12px;
+    opacity: 0.8;
+}
+
+.no-gaps p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Goals */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.goal-card {
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.goal-card:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.goal-card.on-track {
+    border-left: 3px solid #10b981;
+}
+
+.goal-card.at-risk {
+    border-left: 3px solid #ef4444;
+}
+
+.goal-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.goal-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.goal-info {
+    flex: 1;
+}
+
+.goal-metric {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+.goal-target {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.goal-progress {
+    margin-bottom: 12px;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.progress-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+}
+
+.goal-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.goal-current {
+    color: #111827;
+}
+
+.goal-deadline {
+    color: #64748b;
+}
+
+/* Modal */
+.benchmark-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.benchmark-modal.active {
+    display: flex;
+}
+
+.benchmark-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.benchmark-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1400px;
+    max-height: 90vh;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.benchmark-modal-close {
+    position: sticky;
+    top: 20px;
+    right: 20px;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    color: #64748b;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benchmark-modal-close:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    transform: rotate(90deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .benchmarking-wrapper {
+        padding: 16px;
+    }
+
+    .benchmark-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .benchmark-timeframe {
+        width: 100%;
+    }
+
+    .timeframe-btn {
+        flex: 1;
+    }
+
+    .benchmark-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .rank-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .metrics-grid,
+    .gaps-grid,
+    .goals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benchmark-modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .benchmark-title {
+        font-size: 20px;
+    }
+
+    .benchmark-subtitle {
+        margin-left: 36px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .benchmarking-wrapper {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+
+    .benchmark-header,
+    .metrics-section,
+    .skill-gaps-section,
+    .goals-section,
+    .overview-card {
+        background: #1e293b;
+        border-color: #334155;
+    }
+
+    .benchmark-title,
+    .section-title,
+    .metric-value,
+    .overview-value,
+    .gap-metric,
+    .goal-metric {
+        color: #f1f5f9;
+    }
+
+    .benchmark-subtitle,
+    .metric-label,
+    .overview-label,
+    .gap-percentage,
+    .goal-target {
+        color: #94a3b8;
+    }
+
+    .metric-card,
+    .goal-card {
+        background: #0f172a;
+        border-color: #334155;
+    }
+
+    .metric-card:hover,
+    .goal-card:hover {
+        background: #1e293b;
+    }
+
+    .comparison-bar,
+    .progress-bar {
+        background: #334155;
+    }
+
+    .gap-card {
+        background: rgba(251, 191, 36, 0.1);
+        border-color: #fbbf24;
+    }
+
+    .gap-recommendation {
+        background: #1e293b;
+    }
+
+    .benchmark-modal-content {
+        background: #1e293b;
+    }
+
+    .timeframe-btn {
+        color: #94a3b8;
+    }
+
+    .timeframe-btn:hover {
+        background: rgba(59, 130, 246, 0.2);
+        color: #60a5fa;
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    .benchmark-header .benchmark-timeframe,
+    .benchmark-modal-close {
+        display: none !important;
+    }
+
+    .benchmarking-wrapper {
+        background: white;
+    }
+
+    .metric-card,
+    .goal-card,
+    .gap-card {
+        page-break-inside: avoid;
+    }
+}
